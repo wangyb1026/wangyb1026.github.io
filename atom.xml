@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangyb1026.github.io</id>
-    <title>Gridea</title>
-    <updated>2021-03-19T02:14:15.592Z</updated>
+    <title>咸鱼得水</title>
+    <updated>2021-03-19T02:15:30.098Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangyb1026.github.io"/>
     <link rel="self" href="https://wangyb1026.github.io/atom.xml"/>
-    <subtitle>咸鱼得水</subtitle>
+    <subtitle>咸鱼得水，随性分享</subtitle>
     <logo>https://wangyb1026.github.io/images/avatar.png</logo>
     <icon>https://wangyb1026.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2021, 咸鱼得水</rights>
     <entry>
         <title type="html"><![CDATA[新的博客测试]]></title>
         <id>https://wangyb1026.github.io/post/xin-de-bo-ke-ce-shi/</id>
