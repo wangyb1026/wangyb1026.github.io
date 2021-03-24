@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangyb1026.github.io</id>
     <title>咸鱼得水</title>
-    <updated>2021-03-24T02:41:31.998Z</updated>
+    <updated>2021-03-24T06:15:19.708Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangyb1026.github.io"/>
     <link rel="self" href="https://wangyb1026.github.io/atom.xml"/>
@@ -10,6 +10,56 @@
     <logo>https://wangyb1026.github.io/images/avatar.png</logo>
     <icon>https://wangyb1026.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 咸鱼得水</rights>
+    <entry>
+        <title type="html"><![CDATA[并发模型与事件循环]]></title>
+        <id>https://wangyb1026.github.io/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/</id>
+        <link href="https://wangyb1026.github.io/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/">
+        </link>
+        <updated>2021-03-24T03:40:22.000Z</updated>
+        <content type="html"><![CDATA[<p>以下内容参考MDN 关于 JavaScript的并发模型与事件循环的解释。<br>
+JavaScript的运行时来按顺序执行当前消息队列中的所有消息。当本次所有消息中的所有执行栈都执行完毕后，运行时将等待新的消息。</p>
+<p>一、关键名词：栈、堆、队列<br>
+1.栈<br>
+栈相当于一个平台，用于处理消息中需要执行的函数。当一个函数调用时，这个函数将作为一个帧被压入栈中，当函数完成调用后，会被弹出栈。<br>
+2.堆<br>
+堆是内存中的指定区域，JavaScript中将Object对象存放在堆中。<br>
+3.队列<br>
+每执行一个事件、调用一次函数都会创建一个消息对应的回调函数。在事件循环中，JavaScript运行时会从当前时间点的第一个消息开始执行。当该消息中的函数全部处理完、函数处理时创建的栈帧全部弹出栈中（MDN：函数的处理会一直进行到执行栈再次为空为止），执行下一个消息。<br>
+<a href="https://mdn.mozillademos.org/files/17124/The_Javascript_Runtime_Environment_Example.svg"></a></p>
+<p>二、事件循环<br>
+循环的意思是JavaScript会一直监听消息队列，当发现有消息需要处理时，会开始【同步】处理消息。</p>
+<p>三、关键术语<br>
+1.执行至完成<br>
+MDN: 每一个消息完整地执行后，其它消息才会被执行。这为程序的分析提供了一些优秀的特性，包括：当一个函数执行时，它不会被抢占，只有在它运行完毕之后才会去运行任何其他的代码，才能修改这个函数操作的数据。这与C语言不同，例如，如果函数在线程中运行，它可能在任何位置被终止，然后在另一个线程中运行其他代码。<br>
+这个模型的一个缺点在于当一个消息需要太长时间才能处理完毕时，Web应用程序就无法处理与用户的交互，例如点击或滚动。为了缓解这个问题，浏览器一般会弹出一个“这个脚本运行时间过长”的对话框。一个良好的习惯是缩短单个消息处理时间，并在可能的情况下将一个消息裁剪成多个消息。</p>
+<p>2.添加消息、零延迟<br>
+JavaScript会在一个消息完全处理后，再执行下一个。例如在绑定点击事件时，JavaScript会创建一个消息到队列中，但是如果前一个消息还没有执行完，就会出现点击后，并没有立即执行相应的函数。<br>
+MDN中以一个典型的setTimeout()方法举例：<br>
+setTimeout()是一个异步方法，因此，它会让后面同步的方法先执行。在消息队列中，setTimeout会等<br>
+消息队列中的消息都处理完，才会被处理。</p>
+<p>const s = new Date().getSeconds();</p>
+<p>setTimeout(function() {<br>
+console.log(&quot;Ran after &quot; + (new Date().getSeconds() - s) + &quot; seconds&quot;);<br>
+}, 500);</p>
+<p>while(true) {<br>
+if(new Date().getSeconds() - s &gt;= 2) {<br>
+console.log(&quot;Good, looped for 2 seconds&quot;);<br>
+break;<br>
+}<br>
+}<br>
+执行结果：<br>
+//  Good, looped for 2 seconds<br>
+//  Ran after 2 seconds</p>
+<p>说明即使setTimeout是在while之前，但因为是异步方法，交由异步线程处理，因此后面的同步方法会先插入到消息队列，先被处理。</p>
+<p>===================<br>
+零延迟：<br>
+setTimeout(func(), [time])中的第二个参数是代表延迟时间。但是这个延迟时间并不一定如期实现。<br>
+当传入time = 500时，如果消息队列中没有其他消息，setTimeout会正常延迟500ms执行function();<br>
+但是由于后面的while插入到了setTimeout之前，则setTimeout必须等待while执行完毕，此时已经超过500ms，function()会在while结束后立即执行。<br>
+反之，当time = 0时，setTimeout仍需等待while结束，也就无法实现理想中的立即执行。<br>
+setTimeout中的第二个参数，是指消息加入到队列的最小延迟时间，并不是执行到setTimeout就延迟或不延迟。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Promise 同步还是异步？]]></title>
         <id>https://wangyb1026.github.io/post/promise-tong-bu-huan-shi-yi-bu/</id>
