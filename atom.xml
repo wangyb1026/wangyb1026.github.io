@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangyb1026.github.io</id>
     <title>咸鱼得水</title>
-    <updated>2021-03-24T06:15:19.708Z</updated>
+    <updated>2021-03-24T09:59:45.402Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangyb1026.github.io"/>
     <link rel="self" href="https://wangyb1026.github.io/atom.xml"/>
@@ -25,7 +25,7 @@ JavaScript的运行时来按顺序执行当前消息队列中的所有消息。�
 堆是内存中的指定区域，JavaScript中将Object对象存放在堆中。<br>
 3.队列<br>
 每执行一个事件、调用一次函数都会创建一个消息对应的回调函数。在事件循环中，JavaScript运行时会从当前时间点的第一个消息开始执行。当该消息中的函数全部处理完、函数处理时创建的栈帧全部弹出栈中（MDN：函数的处理会一直进行到执行栈再次为空为止），执行下一个消息。<br>
-<a href="https://mdn.mozillademos.org/files/17124/The_Javascript_Runtime_Environment_Example.svg"></a></p>
+<img src="https://mdn.mozillademos.org/files/17124/The_Javascript_Runtime_Environment_Example.svg" alt="" loading="lazy"></p>
 <p>二、事件循环<br>
 循环的意思是JavaScript会一直监听消息队列，当发现有消息需要处理时，会开始【同步】处理消息。</p>
 <p>三、关键术语<br>
