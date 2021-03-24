@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>新的博客测试 | 咸鱼得水</title>
+<title>Promise 同步还是异步？ | 咸鱼得水</title>
 <meta name="description" content="咸鱼得水，随性分享">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,23 +80,46 @@
       <div class="content-container">
         <div class="post-detail">
           
-            <div class="feature-container" style="background-image: url('https://wangyb1026.github.io/post-images/xin-de-bo-ke-ce-shi.jpg')">
+            <div class="feature-container" style="background-image: url('https://wangyb1026.github.io/post-images/promise-tong-bu-huan-shi-yi-bu.jpeg')">
             </div>
           
-          <h2 class="post-title">新的博客测试</h2>
+          <h2 class="post-title">Promise 同步还是异步？</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2021-03-19</span>
+            <span><i class="icon-calendar-outline"></i> 2021-03-24</span>
             
           </div>
           <div class="post-content">
-            <p>哈哈哈，欢迎来到我的新博客！<br>
-poweredby Gridea and Github Pages.<br>
-记住链接：<a href="https://wangyb1026.github.io/post-images/1616117867563.jpg">https://jackwang.dev</a></p>
+            <p>Promise 其实是个同步的方法，在代码中会按照顺序执行。同时new Promise({})里面有任何方法，都会按顺序执行。并且不受resolve() 和 reject()执行而阻止后续代码执行。除非return resolve()或 return reject()，此时会阻止return后面的代码执行。<br>
+Promise.then() 是个异步方法，在Promise跑完后会执行then中的callback。但是then内部的callback是同步的，里面的代码按顺序执行。</p>
+<p>一段典型的例子：<br>
+const promise = new Promise((resolve, reject) =&gt; {<br>
+console.log(1);<br>
+resolve(5);<br>
+console.log(2);<br>
+}).then(val =&gt; {<br>
+console.log(val);<br>
+});</p>
+<p>promise.then(() =&gt; {<br>
+console.log(3);<br>
+});</p>
+<p>console.log(4);</p>
+<p>setTimeout(function() {<br>
+console.log(6);<br>
+});<br>
+//  1 2 4 5 3 6</p>
 
           </div>
         </div>
 
         
+          <div class="next-post">
+            <a class="purple-link" href="https://wangyb1026.github.io/post/ecmascript-shu-ju-lei-xing/">
+              <h3 class="post-title">
+                下一篇：ECMAScript 数据类型
+              </h3>
+            </a>
+          </div>
+          
       </div>
 
       
