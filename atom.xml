@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangyb1026.github.io</id>
     <title>咸鱼得水</title>
-    <updated>2021-03-25T07:41:33.319Z</updated>
+    <updated>2021-03-25T08:12:30.290Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangyb1026.github.io"/>
     <link rel="self" href="https://wangyb1026.github.io/atom.xml"/>
@@ -16,7 +16,7 @@
         <link href="https://wangyb1026.github.io/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/">
         </link>
         <updated>2021-03-24T03:40:22.000Z</updated>
-        <content type="html"><![CDATA[<p>以下内容参考MDN 关于 JavaScript的并发模型与事件循环的解释。<br>
+        <content type="html"><![CDATA[<p>以下内容参考MDN 关于 JavaScript的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop">并发模型与事件循环</a>的解释。<br>
 JavaScript的运行时来按顺序执行当前消息队列中的所有消息。当本次所有消息中的所有执行栈都执行完毕后，运行时将等待新的消息。</p>
 <p>一、关键名词：栈、堆、队列<br>
 1.栈<br>
