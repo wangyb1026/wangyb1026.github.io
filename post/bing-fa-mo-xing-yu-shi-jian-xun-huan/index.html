@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://wangyb1026.github.io/favicon.ico?v=1616656195823">
+<link rel="shortcut icon" href="https://wangyb1026.github.io/favicon.ico?v=1616658090502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://wangyb1026.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://wangyb1026.github.io">
-        <img class="avatar" src="https://wangyb1026.github.io/images/avatar.png?v=1616656195823" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://wangyb1026.github.io/images/avatar.png?v=1616658090502" alt="" width="32px" height="32px">
       </a>
       <a href="https://wangyb1026.github.io">
         <h1 class="site-title">咸鱼得水</h1>
@@ -123,12 +123,12 @@ break;<br>
 执行结果：<br>
 //  Good, looped for 2 seconds<br>
 //  Ran after 2 seconds</p>
-<p>说明即使setTimeout是在while之前，但因为是异步方法，交由异步线程处理，因此后面的同步方法会先插入到消息队列，先被处理。</p>
+<p>说明即使setTimeout是在while之前，但因为是异步方法，交由异步线程处理，setTimeout会等本轮事件循环中所有事件处理完成后，在下一轮事件执行。</p>
 <p>===================<br>
 零延迟：<br>
 setTimeout(func(), [time])中的第二个参数是代表延迟时间。但是这个延迟时间并不一定如期实现。<br>
 当传入time = 500时，如果消息队列中没有其他消息，setTimeout会正常延迟500ms执行function();<br>
-但是由于后面的while插入到了setTimeout之前，则setTimeout必须等待while执行完毕，此时已经超过500ms，function()会在while结束后立即执行。<br>
+但是由于后面的while插入到了setTimeout之前，则setTimeout必须等待while执行完毕（本轮循环只有while），此时已经超过500ms，function()会在while结束后立即执行。<br>
 反之，当time = 0时，setTimeout仍需等待while结束，也就无法实现理想中的立即执行。<br>
 setTimeout中的第二个参数，是指消息加入到队列的最小延迟时间，并不是执行到setTimeout就延迟或不延迟。</p>
 

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangyb1026.github.io</id>
     <title>咸鱼得水</title>
-    <updated>2021-03-25T07:10:02.327Z</updated>
+    <updated>2021-03-25T07:41:33.319Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangyb1026.github.io"/>
     <link rel="self" href="https://wangyb1026.github.io/atom.xml"/>
@@ -50,12 +50,12 @@ break;<br>
 执行结果：<br>
 //  Good, looped for 2 seconds<br>
 //  Ran after 2 seconds</p>
-<p>说明即使setTimeout是在while之前，但因为是异步方法，交由异步线程处理，因此后面的同步方法会先插入到消息队列，先被处理。</p>
+<p>说明即使setTimeout是在while之前，但因为是异步方法，交由异步线程处理，setTimeout会等本轮事件循环中所有事件处理完成后，在下一轮事件执行。</p>
 <p>===================<br>
 零延迟：<br>
 setTimeout(func(), [time])中的第二个参数是代表延迟时间。但是这个延迟时间并不一定如期实现。<br>
 当传入time = 500时，如果消息队列中没有其他消息，setTimeout会正常延迟500ms执行function();<br>
-但是由于后面的while插入到了setTimeout之前，则setTimeout必须等待while执行完毕，此时已经超过500ms，function()会在while结束后立即执行。<br>
+但是由于后面的while插入到了setTimeout之前，则setTimeout必须等待while执行完毕（本轮循环只有while），此时已经超过500ms，function()会在while结束后立即执行。<br>
 反之，当time = 0时，setTimeout仍需等待while结束，也就无法实现理想中的立即执行。<br>
 setTimeout中的第二个参数，是指消息加入到队列的最小延迟时间，并不是执行到setTimeout就延迟或不延迟。</p>
 ]]></content>
