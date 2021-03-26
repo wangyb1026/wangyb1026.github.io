@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangyb1026.github.io</id>
     <title>咸鱼得水</title>
-    <updated>2021-03-25T08:12:30.290Z</updated>
+    <updated>2021-03-26T01:40:04.340Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangyb1026.github.io"/>
     <link rel="self" href="https://wangyb1026.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://wangyb1026.github.io/images/avatar.png</logo>
     <icon>https://wangyb1026.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 咸鱼得水</rights>
+    <entry>
+        <title type="html"><![CDATA[自己制作的视频播放组件--myvideo]]></title>
+        <id>https://wangyb1026.github.io/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/</id>
+        <link href="https://wangyb1026.github.io/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/">
+        </link>
+        <updated>2021-03-26T01:30:13.000Z</updated>
+        <content type="html"><![CDATA[<p>jQuery + 原生编写的基本功能的播放组件，实现了播放暂停、控制条拖拽、音量拖拽、静音、全屏、自定义标题、自定义播放器大小等功能。<br>
+代码采用了jQuery，因此代码没有很简洁、也有很多不足之处，有空后面会优化或者基于Vue重构。<br>
+DEMO：<a href="https://wangyb1026.github.io/myvideo/">https://wangyb1026.github.io/myvideo/</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[并发模型与事件循环]]></title>
         <id>https://wangyb1026.github.io/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/</id>
