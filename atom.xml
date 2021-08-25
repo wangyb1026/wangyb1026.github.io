@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wangyb1026.github.io</id>
     <title>咸鱼得水</title>
-    <updated>2021-03-24T06:15:19.708Z</updated>
+    <updated>2021-03-26T01:40:56.221Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wangyb1026.github.io"/>
     <link rel="self" href="https://wangyb1026.github.io/atom.xml"/>
@@ -11,12 +11,23 @@
     <icon>https://wangyb1026.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 咸鱼得水</rights>
     <entry>
+        <title type="html"><![CDATA[自己制作的视频播放组件--myvideo]]></title>
+        <id>https://wangyb1026.github.io/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/</id>
+        <link href="https://wangyb1026.github.io/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/">
+        </link>
+        <updated>2021-03-26T01:30:13.000Z</updated>
+        <content type="html"><![CDATA[<p>jQuery + 原生编写的基本功能的播放组件，实现了播放暂停、控制条拖拽、音量拖拽、静音、全屏、自定义标题、自定义播放器大小等功能。<br>
+代码采用了jQuery，因此代码没有很简洁、也有很多不足之处，有空后面会优化或者基于Vue重构。<br>
+DEMO：<a href="https://wangyb1026.github.io/myvideo/">https://wangyb1026.github.io/myvideo/</a></p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[并发模型与事件循环]]></title>
         <id>https://wangyb1026.github.io/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/</id>
         <link href="https://wangyb1026.github.io/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/">
         </link>
         <updated>2021-03-24T03:40:22.000Z</updated>
-        <content type="html"><![CDATA[<p>以下内容参考MDN 关于 JavaScript的并发模型与事件循环的解释。<br>
+        <content type="html"><![CDATA[<p>以下内容参考MDN 关于 JavaScript的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop">并发模型与事件循环</a>的解释。<br>
 JavaScript的运行时来按顺序执行当前消息队列中的所有消息。当本次所有消息中的所有执行栈都执行完毕后，运行时将等待新的消息。</p>
 <p>一、关键名词：栈、堆、队列<br>
 1.栈<br>
@@ -25,7 +36,7 @@ JavaScript的运行时来按顺序执行当前消息队列中的所有消息。�
 堆是内存中的指定区域，JavaScript中将Object对象存放在堆中。<br>
 3.队列<br>
 每执行一个事件、调用一次函数都会创建一个消息对应的回调函数。在事件循环中，JavaScript运行时会从当前时间点的第一个消息开始执行。当该消息中的函数全部处理完、函数处理时创建的栈帧全部弹出栈中（MDN：函数的处理会一直进行到执行栈再次为空为止），执行下一个消息。<br>
-<a href="https://mdn.mozillademos.org/files/17124/The_Javascript_Runtime_Environment_Example.svg"></a></p>
+<img src="https://mdn.mozillademos.org/files/17124/The_Javascript_Runtime_Environment_Example.svg" alt="" loading="lazy"></p>
 <p>二、事件循环<br>
 循环的意思是JavaScript会一直监听消息队列，当发现有消息需要处理时，会开始【同步】处理消息。</p>
 <p>三、关键术语<br>
@@ -50,12 +61,12 @@ break;<br>
 执行结果：<br>
 //  Good, looped for 2 seconds<br>
 //  Ran after 2 seconds</p>
-<p>说明即使setTimeout是在while之前，但因为是异步方法，交由异步线程处理，因此后面的同步方法会先插入到消息队列，先被处理。</p>
+<p>说明即使setTimeout是在while之前，但因为是异步方法，交由异步线程处理，setTimeout会等本轮事件循环中所有事件处理完成后，在下一轮事件执行。</p>
 <p>===================<br>
 零延迟：<br>
 setTimeout(func(), [time])中的第二个参数是代表延迟时间。但是这个延迟时间并不一定如期实现。<br>
 当传入time = 500时，如果消息队列中没有其他消息，setTimeout会正常延迟500ms执行function();<br>
-但是由于后面的while插入到了setTimeout之前，则setTimeout必须等待while执行完毕，此时已经超过500ms，function()会在while结束后立即执行。<br>
+但是由于后面的while插入到了setTimeout之前，则setTimeout必须等待while执行完毕（本轮循环只有while），此时已经超过500ms，function()会在while结束后立即执行。<br>
 反之，当time = 0时，setTimeout仍需等待while结束，也就无法实现理想中的立即执行。<br>
 setTimeout中的第二个参数，是指消息加入到队列的最小延迟时间，并不是执行到setTimeout就延迟或不延迟。</p>
 ]]></content>
@@ -66,9 +77,13 @@ setTimeout中的第二个参数，是指消息加入到队列的最小延迟时�
         <link href="https://wangyb1026.github.io/post/promise-tong-bu-huan-shi-yi-bu/">
         </link>
         <updated>2021-03-24T02:14:44.000Z</updated>
-        <content type="html"><![CDATA[<p>Promise 其实是个同步的方法，在代码中会按照顺序执行。同时new Promise({})里面有任何方法，都会按顺序执行。并且不受resolve() 和 reject()执行而阻止后续代码执行。除非return resolve()或 return reject()，此时会阻止return后面的代码执行。<br>
+        <content type="html"><![CDATA[<p>可以先看一下JavaScript的<a href="/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/">事件循环</a>，对Promise的理解会容易得多。</p>
+<p>Promise 其实是个同步的方法，在代码中会按照顺序执行。同时new Promise({})里面有任何方法，都会按顺序执行。并且不受resolve() 和 reject()执行而阻止后续代码执行。除非return resolve()或 return reject()，此时会阻止return后面的代码执行。<br>
 Promise.then() 是个异步方法，在Promise跑完后会执行then中的callback。但是then内部的callback是同步的，里面的代码按顺序执行。</p>
 <p>一段典型的例子：<br>
+setTimeout(function() {<br>
+console.log(6);<br>
+});<br>
 const promise = new Promise((resolve, reject) =&gt; {<br>
 console.log(1);<br>
 resolve(5);<br>
@@ -80,10 +95,32 @@ console.log(val);<br>
 console.log(3);<br>
 });</p>
 <p>console.log(4);</p>
-<p>setTimeout(function() {<br>
+<p>//  1 2 4 5 3 6</p>
+<p>🔥这里用事件循环来理解<br>
+这里有3个函数被调用，按照先后次序依次加入到消息队列中。<br>
+事件循环开始处理本轮循环的第一个消息：<br>
+setTimeout(function() {<br>
 console.log(6);<br>
 });<br>
-//  1 2 4 5 3 6</p>
+由于setTimeout是特殊的异步方法，会移出本轮循环，因此setTimeout会在所有事件结束后再执行。<br>
+然后开始处理第二个消息：<br>
+new Promise((resolve, reject) =&gt; {<br>
+console.log(1);<br>
+resolve(5);<br>
+console.log(2);<br>
+})<br>
+resolve()是改变Promise状态的方法，通知then/catch根据状态处理内部函数。该操作是异步的，会将then()放到微任务中处理。继续执行console.log(2)。之后，由于该栈已没有返回值，该消息执行完毕，继续执行下一个消息：<br>
+promise.then(() =&gt; {<br>
+console.log(3);<br>
+});<br>
+同样是一个函数调用，但是调用了then()方法，同上，会放到微任务中处理。继续下一个消息：<br>
+console.log(4);<br>
+此时同步方法消息已处理完毕，异步线程会在得到结果后通知主线程并加入消息队列。<br>
+先返回resolve()的结果，<br>
+执行第一个then() // 5；<br>
+和第二个then() // 3；<br>
+本轮事件循环结束。<br>
+最后开始下一轮事件循环，执行setTimeout()的结果 // 6。</p>
 ]]></content>
     </entry>
     <entry>

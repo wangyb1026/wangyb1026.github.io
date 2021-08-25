@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>Promise 同步还是异步？ | 咸鱼得水</title>
+<title>自己制作的视频播放组件--myvideo | 咸鱼得水</title>
 <meta name="description" content="咸鱼得水，随性分享">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,68 +80,27 @@
       <div class="content-container">
         <div class="post-detail">
           
-            <div class="feature-container" style="background-image: url('https://wangyb1026.github.io/post-images/promise-tong-bu-huan-shi-yi-bu.jpeg')">
+            <div class="feature-container" style="background-image: url('https://wangyb1026.github.io/post-images/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo.png')">
             </div>
           
-          <h2 class="post-title">Promise 同步还是异步？</h2>
+          <h2 class="post-title">自己制作的视频播放组件--myvideo</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2021-03-24</span>
+            <span><i class="icon-calendar-outline"></i> 2021-03-26</span>
             
           </div>
           <div class="post-content">
-            <p>可以先看一下JavaScript的<a href="/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/">事件循环</a>，对Promise的理解会容易得多。</p>
-<p>Promise 其实是个同步的方法，在代码中会按照顺序执行。同时new Promise({})里面有任何方法，都会按顺序执行。并且不受resolve() 和 reject()执行而阻止后续代码执行。除非return resolve()或 return reject()，此时会阻止return后面的代码执行。<br>
-Promise.then() 是个异步方法，在Promise跑完后会执行then中的callback。但是then内部的callback是同步的，里面的代码按顺序执行。</p>
-<p>一段典型的例子：<br>
-setTimeout(function() {<br>
-console.log(6);<br>
-});<br>
-const promise = new Promise((resolve, reject) =&gt; {<br>
-console.log(1);<br>
-resolve(5);<br>
-console.log(2);<br>
-}).then(val =&gt; {<br>
-console.log(val);<br>
-});</p>
-<p>promise.then(() =&gt; {<br>
-console.log(3);<br>
-});</p>
-<p>console.log(4);</p>
-<p>//  1 2 4 5 3 6</p>
-<p>🔥这里用事件循环来理解<br>
-这里有3个函数被调用，按照先后次序依次加入到消息队列中。<br>
-事件循环开始处理本轮循环的第一个消息：<br>
-setTimeout(function() {<br>
-console.log(6);<br>
-});<br>
-由于setTimeout是特殊的异步方法，会移出本轮循环，因此setTimeout会在所有事件结束后再执行。<br>
-然后开始处理第二个消息：<br>
-new Promise((resolve, reject) =&gt; {<br>
-console.log(1);<br>
-resolve(5);<br>
-console.log(2);<br>
-})<br>
-resolve()是改变Promise状态的方法，通知then/catch根据状态处理内部函数。该操作是异步的，会将then()放到微任务中处理。继续执行console.log(2)。之后，由于该栈已没有返回值，该消息执行完毕，继续执行下一个消息：<br>
-promise.then(() =&gt; {<br>
-console.log(3);<br>
-});<br>
-同样是一个函数调用，但是调用了then()方法，同上，会放到微任务中处理。继续下一个消息：<br>
-console.log(4);<br>
-此时同步方法消息已处理完毕，异步线程会在得到结果后通知主线程并加入消息队列。<br>
-先返回resolve()的结果，<br>
-执行第一个then() // 5；<br>
-和第二个then() // 3；<br>
-本轮事件循环结束。<br>
-最后开始下一轮事件循环，执行setTimeout()的结果 // 6。</p>
+            <p>jQuery + 原生编写的基本功能的播放组件，实现了播放暂停、控制条拖拽、音量拖拽、静音、全屏、自定义标题、自定义播放器大小等功能。<br>
+代码采用了jQuery，因此代码没有很简洁、也有很多不足之处，有空后面会优化或者基于Vue重构。<br>
+DEMO：<a href="https://wangyb1026.github.io/myvideo/">https://wangyb1026.github.io/myvideo/</a></p>
 
           </div>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://wangyb1026.github.io/post/ecmascript-shu-ju-lei-xing/">
+            <a class="purple-link" href="https://wangyb1026.github.io/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/">
               <h3 class="post-title">
-                下一篇：ECMAScript 数据类型
+                下一篇：并发模型与事件循环
               </h3>
             </a>
           </div>
