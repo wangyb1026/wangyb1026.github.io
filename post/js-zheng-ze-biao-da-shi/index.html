@@ -1,9 +1,11 @@
+
+<!DOCTYPE html>
 <html>
   <head>
     
 <meta charset="utf-8" >
 
-<title>咸鱼得水</title>
+<title>JS 正则表达式 | 咸鱼得水</title>
 <meta name="description" content="咸鱼得水，随性分享">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -75,15 +77,79 @@
 </transition>
 
 
-        <div class="content-container">
+      <div class="content-container">
+        <div class="post-detail">
           
-          <div class="tags-container">
+          <h2 class="post-title">JS 正则表达式</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-03-29</span>
             
           </div>
+          <div class="post-content">
+            <p>这里仅作为查缺补漏，并不包含所有内容。</p>
+<ol>
+<li>重复限定符：<br>
+<em>：匹配【前一个字符】 0次或多次<br>
+const reg = /a</em>/;</li>
+</ol>
+<p>console.log(reg.test('ba'));      //true<br>
+console.log(reg.test('b'));       //true<br>
+console.log(reg.test('baaa'));     //true</p>
+<p>+：匹配前一个字符 1 次或多次<br>
+const reg = /a+/;</p>
+<p>console.log(reg.test('ba'));    //true<br>
+console.log(reg.test('baaa'));    //true<br>
+console.log(reg.test('b'));     //false</p>
+<p>?：匹配前一个字符 0 次或 1 次<br>
+const reg = /ba?/;</p>
+<p>console.log(reg.exec('ba'));      //['ba']<br>
+console.log(reg.exec('baaa'));      //['ba']<br>
+console.log(reg.exec('b'));     //['b']</p>
+<ol start="2">
+<li>
+<p>(?!X)：正向否定查找，即匹配后面不跟X的字符串，与(?:X)相反。</p>
+</li>
+<li>
+<p>反元字符 （[^x]、\D、\W、\B、\S）<br>
+这里[^x]是匹配除x之外的任意字符。</p>
+</li>
+<li>
+<p>匹配方式 贪婪模式、非贪婪模式（限定符后加?）<br>
+如/ba*?/</p>
+</li>
+<li>
+<p>扩展<br>
+u: Unicode修饰符，加上u后，可以在之前基础上正确识别0xFFFF的Unicode字符；<br>
+y: 粘连修饰符，下一次匹配必须和上一次匹配剩余的第一个位置开始；</p>
+</li>
+<li>
+<p>具名组匹配<br>
+const RE_DATE = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;</p>
+</li>
+</ol>
+<p>const matchObj = RE_DATE.exec('1999-12-31');<br>
+const year = matchObj.groups.year; // &quot;1999&quot;<br>
+const month = matchObj.groups.month; // &quot;12&quot;<br>
+const day = matchObj.groups.day; // &quot;31&quot;<br>
+“具名组匹配”在圆括号内部，模式的头部添加“问号 + 尖括号 + 组名”（?<year>），然后就可以在exec方法返回结果的groups属性上引用该组名。同时，数字序号（matchObj[1]）依然有效。</p>
 
+          </div>
         </div>
 
-        <div class="site-footer">
+        
+          <div class="next-post">
+            <a class="purple-link" href="http://localhost:4000/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/">
+              <h3 class="post-title">
+                下一篇：自己制作的视频播放组件--myvideo
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
   <div class="slogan">咸鱼得水，随性分享</div>
   <div class="social-container">
     
@@ -106,8 +172,8 @@
 </div>
 
 
-      </div>
-      <script type="application/javascript">
+    </div>
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
 
@@ -123,6 +189,5 @@ var app = new Vue({
 
 
 
-    </div>
   </body>
 </html>

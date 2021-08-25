@@ -1,19 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://wangyb1026.github.io</id>
+    <id>http://localhost:4000</id>
     <title>咸鱼得水</title>
-    <updated>2021-03-26T01:40:56.221Z</updated>
+    <updated>2021-08-25T05:36:02.003Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://wangyb1026.github.io"/>
-    <link rel="self" href="https://wangyb1026.github.io/atom.xml"/>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
     <subtitle>咸鱼得水，随性分享</subtitle>
-    <logo>https://wangyb1026.github.io/images/avatar.png</logo>
-    <icon>https://wangyb1026.github.io/favicon.ico</icon>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2021, 咸鱼得水</rights>
     <entry>
+        <title type="html"><![CDATA[接近完美的匹配URL正则]]></title>
+        <id>http://localhost:4000/post/jie-jin-wan-mei-de-pi-pei-url-zheng-ze/</id>
+        <link href="http://localhost:4000/post/jie-jin-wan-mei-de-pi-pei-url-zheng-ze/">
+        </link>
+        <updated>2021-08-25T05:29:18.000Z</updated>
+        <content type="html"><![CDATA[<p>(([hH][tT]{2}[pP]😕/|[hH][tT]{2}[pP][sS]😕/)?|[wW]{3}.|[wW][aA][pP].|[fF][tT][pP].|[fF][iI][lL][eE].)[-A-Za-z0-9+&amp;@#/%?=<sub>_|!:,.;]+[-A-Za-z0-9+&amp;@#/%=</sub>_|]<br>
+参考https://www.cxyzjd.com/article/qq569699973/94636893，略作调整以匹配非http/https开头的网址</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JS 正则表达式]]></title>
+        <id>http://localhost:4000/post/js-zheng-ze-biao-da-shi/</id>
+        <link href="http://localhost:4000/post/js-zheng-ze-biao-da-shi/">
+        </link>
+        <updated>2021-03-29T03:01:21.000Z</updated>
+        <content type="html"><![CDATA[<p>这里仅作为查缺补漏，并不包含所有内容。</p>
+<ol>
+<li>重复限定符：<br>
+<em>：匹配【前一个字符】 0次或多次<br>
+const reg = /a</em>/;</li>
+</ol>
+<p>console.log(reg.test('ba'));      //true<br>
+console.log(reg.test('b'));       //true<br>
+console.log(reg.test('baaa'));     //true</p>
+<p>+：匹配前一个字符 1 次或多次<br>
+const reg = /a+/;</p>
+<p>console.log(reg.test('ba'));    //true<br>
+console.log(reg.test('baaa'));    //true<br>
+console.log(reg.test('b'));     //false</p>
+<p>?：匹配前一个字符 0 次或 1 次<br>
+const reg = /ba?/;</p>
+<p>console.log(reg.exec('ba'));      //['ba']<br>
+console.log(reg.exec('baaa'));      //['ba']<br>
+console.log(reg.exec('b'));     //['b']</p>
+<ol start="2">
+<li>
+<p>(?!X)：正向否定查找，即匹配后面不跟X的字符串，与(?:X)相反。</p>
+</li>
+<li>
+<p>反元字符 （[^x]、\D、\W、\B、\S）<br>
+这里[^x]是匹配除x之外的任意字符。</p>
+</li>
+<li>
+<p>匹配方式 贪婪模式、非贪婪模式（限定符后加?）<br>
+如/ba*?/</p>
+</li>
+<li>
+<p>扩展<br>
+u: Unicode修饰符，加上u后，可以在之前基础上正确识别0xFFFF的Unicode字符；<br>
+y: 粘连修饰符，下一次匹配必须和上一次匹配剩余的第一个位置开始；</p>
+</li>
+<li>
+<p>具名组匹配<br>
+const RE_DATE = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;</p>
+</li>
+</ol>
+<p>const matchObj = RE_DATE.exec('1999-12-31');<br>
+const year = matchObj.groups.year; // &quot;1999&quot;<br>
+const month = matchObj.groups.month; // &quot;12&quot;<br>
+const day = matchObj.groups.day; // &quot;31&quot;<br>
+“具名组匹配”在圆括号内部，模式的头部添加“问号 + 尖括号 + 组名”（?<year>），然后就可以在exec方法返回结果的groups属性上引用该组名。同时，数字序号（matchObj[1]）依然有效。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[自己制作的视频播放组件--myvideo]]></title>
-        <id>https://wangyb1026.github.io/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/</id>
-        <link href="https://wangyb1026.github.io/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/">
+        <id>http://localhost:4000/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/</id>
+        <link href="http://localhost:4000/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/">
         </link>
         <updated>2021-03-26T01:30:13.000Z</updated>
         <content type="html"><![CDATA[<p>jQuery + 原生编写的基本功能的播放组件，实现了播放暂停、控制条拖拽、音量拖拽、静音、全屏、自定义标题、自定义播放器大小等功能。<br>
@@ -23,8 +87,8 @@ DEMO：<a href="https://wangyb1026.github.io/myvideo/">https://wangyb1026.github
     </entry>
     <entry>
         <title type="html"><![CDATA[并发模型与事件循环]]></title>
-        <id>https://wangyb1026.github.io/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/</id>
-        <link href="https://wangyb1026.github.io/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/">
+        <id>http://localhost:4000/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/</id>
+        <link href="http://localhost:4000/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/">
         </link>
         <updated>2021-03-24T03:40:22.000Z</updated>
         <content type="html"><![CDATA[<p>以下内容参考MDN 关于 JavaScript的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop">并发模型与事件循环</a>的解释。<br>
@@ -73,8 +137,8 @@ setTimeout中的第二个参数，是指消息加入到队列的最小延迟时�
     </entry>
     <entry>
         <title type="html"><![CDATA[Promise 同步还是异步？]]></title>
-        <id>https://wangyb1026.github.io/post/promise-tong-bu-huan-shi-yi-bu/</id>
-        <link href="https://wangyb1026.github.io/post/promise-tong-bu-huan-shi-yi-bu/">
+        <id>http://localhost:4000/post/promise-tong-bu-huan-shi-yi-bu/</id>
+        <link href="http://localhost:4000/post/promise-tong-bu-huan-shi-yi-bu/">
         </link>
         <updated>2021-03-24T02:14:44.000Z</updated>
         <content type="html"><![CDATA[<p>可以先看一下JavaScript的<a href="/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/">事件循环</a>，对Promise的理解会容易得多。</p>
@@ -125,8 +189,8 @@ console.log(4);<br>
     </entry>
     <entry>
         <title type="html"><![CDATA[ECMAScript 数据类型]]></title>
-        <id>https://wangyb1026.github.io/post/ecmascript-shu-ju-lei-xing/</id>
-        <link href="https://wangyb1026.github.io/post/ecmascript-shu-ju-lei-xing/">
+        <id>http://localhost:4000/post/ecmascript-shu-ju-lei-xing/</id>
+        <link href="http://localhost:4000/post/ecmascript-shu-ju-lei-xing/">
         </link>
         <updated>2021-03-19T06:02:33.000Z</updated>
         <content type="html"><![CDATA[<p>最新的ECMAScript 标准定义了9种数据类型：<br>
@@ -144,13 +208,13 @@ console.log(4);<br>
     </entry>
     <entry>
         <title type="html"><![CDATA[新的博客测试]]></title>
-        <id>https://wangyb1026.github.io/post/xin-de-bo-ke-ce-shi/</id>
-        <link href="https://wangyb1026.github.io/post/xin-de-bo-ke-ce-shi/">
+        <id>http://localhost:4000/post/xin-de-bo-ke-ce-shi/</id>
+        <link href="http://localhost:4000/post/xin-de-bo-ke-ce-shi/">
         </link>
         <updated>2021-03-19T01:35:14.000Z</updated>
         <content type="html"><![CDATA[<p>哈哈哈，欢迎来到我的新博客！<br>
 poweredby Gridea and Github Pages.<br>
-记住链接：<a href="https://wangyb1026.github.io/post-images/1616117867563.jpg">https://jackwang.dev</a></p>
+记住链接：<a href="http://localhost:4000/post-images/1616117867563.jpg">https://jackwang.dev</a></p>
 ]]></content>
     </entry>
 </feed>
