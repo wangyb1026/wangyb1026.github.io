@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://wangyb1026.github.io</id>
     <title>咸鱼得水</title>
-    <updated>2021-08-25T08:15:41.862Z</updated>
+    <updated>2021-08-25T09:01:54.116Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="https://wangyb1026.github.io"/>
+    <link rel="self" href="https://wangyb1026.github.io/atom.xml"/>
     <subtitle>咸鱼得水，随性分享</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>https://wangyb1026.github.io/images/avatar.png</logo>
+    <icon>https://wangyb1026.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 咸鱼得水</rights>
     <entry>
         <title type="html"><![CDATA[接近完美的匹配URL正则]]></title>
-        <id>http://localhost:4000/post/jie-jin-wan-mei-de-pi-pei-url-zheng-ze/</id>
-        <link href="http://localhost:4000/post/jie-jin-wan-mei-de-pi-pei-url-zheng-ze/">
+        <id>https://wangyb1026.github.io/post/jie-jin-wan-mei-de-pi-pei-url-zheng-ze/</id>
+        <link href="https://wangyb1026.github.io/post/jie-jin-wan-mei-de-pi-pei-url-zheng-ze/">
         </link>
         <updated>2021-08-25T05:29:18.000Z</updated>
         <content type="html"><![CDATA[<p>((http|ftp|https)😕/)?(([a-zA-Z0-9.<em>-]+.[a-zA-Z]{2,6})|([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9&amp;%</em>./-~-]*)?<br>
@@ -22,8 +22,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[JS 正则表达式]]></title>
-        <id>http://localhost:4000/post/js-zheng-ze-biao-da-shi/</id>
-        <link href="http://localhost:4000/post/js-zheng-ze-biao-da-shi/">
+        <id>https://wangyb1026.github.io/post/js-zheng-ze-biao-da-shi/</id>
+        <link href="https://wangyb1026.github.io/post/js-zheng-ze-biao-da-shi/">
         </link>
         <updated>2021-03-29T03:01:21.000Z</updated>
         <content type="html"><![CDATA[<p>这里仅作为查缺补漏，并不包含所有内容。</p>
@@ -76,8 +76,8 @@ const day = matchObj.groups.day; // &quot;31&quot;<br>
     </entry>
     <entry>
         <title type="html"><![CDATA[自己制作的视频播放组件--myvideo]]></title>
-        <id>http://localhost:4000/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/</id>
-        <link href="http://localhost:4000/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/">
+        <id>https://wangyb1026.github.io/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/</id>
+        <link href="https://wangyb1026.github.io/post/zi-ji-zhi-zuo-de-shi-pin-bo-fang-zu-jian-myvideo/">
         </link>
         <updated>2021-03-26T01:30:13.000Z</updated>
         <content type="html"><![CDATA[<p>jQuery + 原生编写的基本功能的播放组件，实现了播放暂停、控制条拖拽、音量拖拽、静音、全屏、自定义标题、自定义播放器大小等功能。<br>
@@ -87,8 +87,8 @@ DEMO：<a href="https://wangyb1026.github.io/myvideo/">https://wangyb1026.github
     </entry>
     <entry>
         <title type="html"><![CDATA[并发模型与事件循环]]></title>
-        <id>http://localhost:4000/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/</id>
-        <link href="http://localhost:4000/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/">
+        <id>https://wangyb1026.github.io/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/</id>
+        <link href="https://wangyb1026.github.io/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/">
         </link>
         <updated>2021-03-24T03:40:22.000Z</updated>
         <content type="html"><![CDATA[<p>以下内容参考MDN 关于 JavaScript的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop">并发模型与事件循环</a>的解释。<br>
@@ -137,8 +137,8 @@ setTimeout中的第二个参数，是指消息加入到队列的最小延迟时�
     </entry>
     <entry>
         <title type="html"><![CDATA[Promise 同步还是异步？]]></title>
-        <id>http://localhost:4000/post/promise-tong-bu-huan-shi-yi-bu/</id>
-        <link href="http://localhost:4000/post/promise-tong-bu-huan-shi-yi-bu/">
+        <id>https://wangyb1026.github.io/post/promise-tong-bu-huan-shi-yi-bu/</id>
+        <link href="https://wangyb1026.github.io/post/promise-tong-bu-huan-shi-yi-bu/">
         </link>
         <updated>2021-03-24T02:14:44.000Z</updated>
         <content type="html"><![CDATA[<p>可以先看一下JavaScript的<a href="/post/bing-fa-mo-xing-yu-shi-jian-xun-huan/">事件循环</a>，对Promise的理解会容易得多。</p>
@@ -189,8 +189,8 @@ console.log(4);<br>
     </entry>
     <entry>
         <title type="html"><![CDATA[ECMAScript 数据类型]]></title>
-        <id>http://localhost:4000/post/ecmascript-shu-ju-lei-xing/</id>
-        <link href="http://localhost:4000/post/ecmascript-shu-ju-lei-xing/">
+        <id>https://wangyb1026.github.io/post/ecmascript-shu-ju-lei-xing/</id>
+        <link href="https://wangyb1026.github.io/post/ecmascript-shu-ju-lei-xing/">
         </link>
         <updated>2021-03-19T06:02:33.000Z</updated>
         <content type="html"><![CDATA[<p>最新的ECMAScript 标准定义了9种数据类型：<br>
@@ -208,13 +208,13 @@ console.log(4);<br>
     </entry>
     <entry>
         <title type="html"><![CDATA[新的博客测试]]></title>
-        <id>http://localhost:4000/post/xin-de-bo-ke-ce-shi/</id>
-        <link href="http://localhost:4000/post/xin-de-bo-ke-ce-shi/">
+        <id>https://wangyb1026.github.io/post/xin-de-bo-ke-ce-shi/</id>
+        <link href="https://wangyb1026.github.io/post/xin-de-bo-ke-ce-shi/">
         </link>
         <updated>2021-03-19T01:35:14.000Z</updated>
         <content type="html"><![CDATA[<p>哈哈哈，欢迎来到我的新博客！<br>
 poweredby Gridea and Github Pages.<br>
-记住链接：<a href="http://localhost:4000/post-images/1616117867563.jpg">https://jackwang.dev</a></p>
+记住链接：<a href="https://wangyb1026.github.io/post-images/1616117867563.jpg">https://jackwang.dev</a></p>
 ]]></content>
     </entry>
 </feed>
