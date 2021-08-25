@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://localhost:4000</id>
     <title>咸鱼得水</title>
-    <updated>2021-08-25T05:36:02.003Z</updated>
+    <updated>2021-08-25T08:15:41.862Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://localhost:4000"/>
     <link rel="self" href="http://localhost:4000/atom.xml"/>
@@ -16,7 +16,7 @@
         <link href="http://localhost:4000/post/jie-jin-wan-mei-de-pi-pei-url-zheng-ze/">
         </link>
         <updated>2021-08-25T05:29:18.000Z</updated>
-        <content type="html"><![CDATA[<p>(([hH][tT]{2}[pP]😕/|[hH][tT]{2}[pP][sS]😕/)?|[wW]{3}.|[wW][aA][pP].|[fF][tT][pP].|[fF][iI][lL][eE].)[-A-Za-z0-9+&amp;@#/%?=<sub>_|!:,.;]+[-A-Za-z0-9+&amp;@#/%=</sub>_|]<br>
+        <content type="html"><![CDATA[<p>((http|ftp|https)😕/)?(([a-zA-Z0-9.<em>-]+.[a-zA-Z]{2,6})|([0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9&amp;%</em>./-~-]*)?<br>
 参考https://www.cxyzjd.com/article/qq569699973/94636893，略作调整以匹配非http/https开头的网址</p>
 ]]></content>
     </entry>
